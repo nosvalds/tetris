@@ -6,6 +6,7 @@ d.addEventListener('DOMContentLoaded', () =>{
     const startBtn = d.getElementById("start-btn");
     const width = 10;
     let nextRandom = 0;
+    let timerId
 
     // The Tetrominos
 
@@ -78,7 +79,7 @@ d.addEventListener('DOMContentLoaded', () =>{
     }
 
     // calls this function every 1000ms = 1sec
-    timerId = setInterval(moveDown, 500);
+    //timerId = setInterval(moveDown, 500);
 
     // assign functions to keyCodes
     let control = (e) => {
@@ -172,7 +173,18 @@ d.addEventListener('DOMContentLoaded', () =>{
         })
     }
 
-
+    // add functionality to the Start/Pause button
+    startBtn.addEventListener('click', () => {
+        if (timerId) {
+            clearInterval(timerId);
+            timerId = null;
+        } else {
+            draw();
+            timerId = setInterval(moveDown, 1000);
+            nextRandom = Math.floor(Math.random() * theTetrominoes.length);
+            displayShape();
+        }
+    })
 
 
 
