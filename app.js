@@ -212,7 +212,7 @@
         // game over
         let gameOver = () => {
             if (current.some(index => squares[currentPosition + index].classList.contains('taken'))) {
-                scoreDisplay.textContent = 'Game OVER'
+                scoreDisplay.textContent = 'Game OVER. Total Score:' + score;
                 clearInterval(timerId);
             }
         }
