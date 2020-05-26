@@ -15,7 +15,7 @@
             'green',
             'purple',
             'yellow',
-            'light blue'
+            'lightblue'
         ];
 
         // The Tetrominos
@@ -74,7 +74,7 @@
         let currentPosition = 4;
         let currentRotation = 0;
 
-        //randomly select a tetromino (0 - 7)
+        //randomly select a tetromino (index 0 - 6)
         let random = Math.floor(Math.random() * theTetrominoes.length);
 
         // selects a random tetromino and the first rotation of that tetromino
@@ -144,13 +144,10 @@
         let moveLeft = () => {
             undraw();
             const isAtLeftEdge = current.some(index => (currentPosition + index) % width === 0);
-
             if (!isAtLeftEdge) currentPosition -= 1;
-
             if (current.some(index => squares[currentPosition + index].classList.contains('taken'))) {
                 currentPosition += 1;
             }
-
             draw();
         }
 
@@ -158,9 +155,7 @@
         let moveRight = () => {
             undraw();
             const isAtRightEdge = current.some(index => (currentPosition + index) % width === width - 1);
-
             if (!isAtRightEdge) currentPosition += 1;
-
             if (current.some(index => squares[currentPosition + index].classList.contains('taken'))) {
                 currentPosition -= 1;
             }
@@ -186,7 +181,9 @@
 
         const upNextTetrominoes = [
             [1, displayWidth + 1, displayWidth * 2 + 1, 2],
+            [1, displayWidth + 1, displayWidth * 2 + 1, displayWidth * 2 + 2],
             [displayWidth + 1, displayWidth + 2, displayWidth * 2, displayWidth * 2 + 1],
+            [1, 2, displayWidth, displayWidth + 1],
             [2, displayWidth, displayWidth + 1, displayWidth + 2],
             [0, 1, displayWidth, displayWidth + 1],
             [1, displayWidth + 1, displayWidth * 2 + 1, displayWidth * 3 + 1]

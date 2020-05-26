@@ -16,7 +16,7 @@
 .grid {
     width: 200px;
     height: 400px;
-    background-color: aquamarine;
+    background-color: grey;
     display: flex;
     flex-wrap: wrap;
 }
@@ -39,7 +39,7 @@
     height: 80px;
     display: flex;
     flex-wrap: wrap;
-    background-color: aquamarine;
+    background-color: grey;
 }
 
 .mini-grid div {
