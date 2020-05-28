@@ -2,6 +2,7 @@
     d.addEventListener('DOMContentLoaded', () =>{
         const grid = d.querySelector('.grid');
         let squares = Array.from(d.querySelectorAll('.grid div'));
+        let colordisplaySquares = Array.from(d.querySelectorAll('.display-grid div'));
         const scoreDisplay = d.getElementById("score");
         const startBtn = d.getElementById("start-btn");
         const width = 10;
@@ -73,12 +74,26 @@
 
         let currentPosition = 4;
         let currentRotation = 0;
+        let displayPosition = 1;
 
         //randomly select a tetromino (index 0 - 6)
         let random = Math.floor(Math.random() * theTetrominoes.length);
 
         // selects a random tetromino and the first rotation of that tetromino
         let current = theTetrominoes[random][currentRotation];
+
+        // draw display grid tetrominos
+        let drawDisplay = () => {
+            for (let i = 0; i < theTetrominoes.length; i += 1) {
+                theTetrominoes[i][0].forEach(index => {
+                    colordisplaySquares[displayPosition + index].classList.add('tetromino');
+                    colordisplaySquares[displayPosition + index].style.backgroundColor = colors[i];
+                });
+                //displayPosition =+ width * 4; // move down the grid
+            }
+        }
+
+        drawDisplay();
 
         // draw the tetromino
         let draw = () => {

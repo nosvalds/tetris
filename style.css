@@ -1,7 +1,20 @@
+.full-container {
+    display: flex;
+    align-items: flex-end;
+}
+
 .main-container {
     width: 600px;
     margin: 0 auto;
     text-align: center;
+}
+
+.left-main-sidebar {
+    width: 200px;
+    height: 400px;
+    background-color: grey;
+    display: flex;
+    flex-wrap: wrap;
 }
 .container {
     display: flex;
@@ -21,7 +34,7 @@
     flex-wrap: wrap;
 }
 
-.grid div {
+.grid div, .display-grid div {
     height: 20px;
     width: 20px;
 }
