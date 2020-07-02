@@ -179,7 +179,7 @@
         const displayWidth = 4;
         let displayIndex = 0; 
         
-
+        
         const upNextTetrominoes = [
             [1, displayWidth + 1, displayWidth * 2 + 1, 2],
             [1, displayWidth + 1, displayWidth * 2 + 1, displayWidth * 2 + 2],
@@ -202,15 +202,16 @@
             })
         }
 
+        const sideWidth = 5;
 
         const colorDispTetrominoes = [
-            [1, width + 1, width * 2 + 1, 2],
-            [1, width + 1, width * 2 + 1, width * 2 + 2],
-            [width + 1, width + 2, width * 2, width * 2 + 1],
-            [1, 2, width, width + 1],
-            [2, width, width + 1, width + 2],
-            [0, 1, width, width + 1],
-            [1, width + 1, width * 2 + 1, width * 3 + 1]
+            [1, sideWidth + 1, sideWidth * 2 + 1, 2],
+            [1, sideWidth + 1, sideWidth * 2 + 1, sideWidth * 2 + 2],
+            [sideWidth + 1, sideWidth + 2, sideWidth * 2, sideWidth * 2 + 1],
+            [1, 2, sideWidth, sideWidth + 1],
+            [2, sideWidth, sideWidth + 1, sideWidth + 2],
+            [0, 1, sideWidth, sideWidth + 1],
+            [1, sideWidth + 1, sideWidth * 2 + 1, sideWidth * 3 + 1]
         ];
 
         let displayPosition = 2;
@@ -219,8 +220,6 @@
         let drawDisplay = () => {
             for (let i = 0; i < colorDispTetrominoes.length; i += 1) {
                 colorDispTetrominoes[i].forEach(index => {
-                    console.log(i, index);
-                    console.log(displayPosition + index)
                     colordisplaySquares[displayPosition + index].classList.add('tetromino');
                     colordisplaySquares[displayPosition + index].style.backgroundColor = colors[i];
                 });
