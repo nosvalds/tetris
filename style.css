@@ -10,8 +10,6 @@
 }
 
 .left-main-sidebar {
-    width: 200px;
-    height: 400px;
     background-color: grey;
     display: flex;
     flex-wrap: wrap;
@@ -26,6 +24,7 @@
     border-radius: 15px;
     margin-bottom: 1rem;
 }
+
 .grid {
     width: 200px;
     height: 400px;
@@ -36,7 +35,7 @@
 
 .display-grid {
     width: 100px;
-    height: 960px;
+    height: 600px;
     background-color: grey;
     display: flex;
     flex-wrap: wrap;

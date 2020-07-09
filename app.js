@@ -207,14 +207,14 @@
         const colorDispTetrominoes = [
             [1, sideWidth + 1, sideWidth * 2 + 1, 2],
             [1, sideWidth + 1, sideWidth * 2 + 1, sideWidth * 2 + 2],
-            [sideWidth + 1, sideWidth + 2, sideWidth * 2, sideWidth * 2 + 1],
+            [1, 2, sideWidth, sideWidth + 1],
             [0, 1, sideWidth + 1, sideWidth + 2],
             [1, sideWidth, sideWidth + 1, sideWidth + 2],
             [0, 1, sideWidth, sideWidth + 1],
             [1, sideWidth + 1, sideWidth * 2 + 1, sideWidth * 3 + 1]
         ];
 
-        let displayPosition = 2;
+        let displayPosition = 1 + sideWidth;
 
         // draw display grid tetrominos
         let drawDisplay = () => {
@@ -223,7 +223,7 @@
                     colordisplaySquares[displayPosition + index].classList.add('tetromino');
                     colordisplaySquares[displayPosition + index].style.backgroundColor = colors[i];
                 });
-                displayPosition += width * 3 ; // move down the grid
+                displayPosition += width * 2 ; // move down the grid
             }
         }
 
