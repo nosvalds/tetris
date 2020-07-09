@@ -1,0 +1,9 @@
+.left-main-sidebar {
+    background-color: grey;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.sidebar {
+    margin-left: 50px;
+}
