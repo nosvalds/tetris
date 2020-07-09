@@ -184,8 +184,8 @@
             [1, displayWidth + 1, displayWidth * 2 + 1, 2],
             [1, displayWidth + 1, displayWidth * 2 + 1, displayWidth * 2 + 2],
             [displayWidth + 1, displayWidth + 2, displayWidth * 2, displayWidth * 2 + 1],
-            [1, 2, displayWidth, displayWidth + 1],
-            [2, displayWidth, displayWidth + 1, displayWidth + 2],
+            [0, 1, displayWidth + 1, displayWidth + 2],
+            [1, displayWidth, displayWidth + 1, displayWidth + 2],
             [0, 1, displayWidth, displayWidth + 1],
             [1, displayWidth + 1, displayWidth * 2 + 1, displayWidth * 3 + 1]
         ];
@@ -208,8 +208,8 @@
             [1, sideWidth + 1, sideWidth * 2 + 1, 2],
             [1, sideWidth + 1, sideWidth * 2 + 1, sideWidth * 2 + 2],
             [sideWidth + 1, sideWidth + 2, sideWidth * 2, sideWidth * 2 + 1],
-            [1, 2, sideWidth, sideWidth + 1],
-            [2, sideWidth, sideWidth + 1, sideWidth + 2],
+            [0, 1, sideWidth + 1, sideWidth + 2],
+            [1, sideWidth, sideWidth + 1, sideWidth + 2],
             [0, 1, sideWidth, sideWidth + 1],
             [1, sideWidth + 1, sideWidth * 2 + 1, sideWidth * 3 + 1]
         ];
