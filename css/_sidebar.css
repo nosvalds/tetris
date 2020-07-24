@@ -1,5 +1,5 @@
 .left-main-sidebar {
-    background-color: grey;
+    background-color: var(--grid);
     display: flex;
     flex-wrap: wrap;
 }

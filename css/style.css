@@ -1,8 +1,14 @@
 @import '_settings.css';
 
+@import '_typography.css';
+
 @import '_buttons.css';
 
+@import '_tetromino.css';
+
 @import '_sidebar.css';
+
+@import '_footer.css';
 
 @import '_main-grids.css';
 

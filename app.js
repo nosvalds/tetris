@@ -10,13 +10,13 @@
         let timerId
         let score = 0;
         const colors = [
-            'blue',
-            'orange',
-            'red',
-            'green',
-            'purple',
-            'yellow',
-            'lightblue'
+            '#0341AE',
+            '#FF971C',
+            '#FF3213',
+            '#72CB3B',
+            '#D129FF',
+            '#FFD500',
+            '#92DCE5'
         ];
 
         // The Tetrominos

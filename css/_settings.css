@@ -1,0 +1,26 @@
+/* fonts */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&family=Notable&display=swap');
+/* border-box for everything */
+* {
+    box-sizing: border-box;
+}
+
+/* Setting CSS variables and root font size */
+:root {
+    font-size: 16px;
+
+    --blue: #0341AE;
+    --light-blue: #92DCE5;
+    --green: #72CB3B;
+    --yellow:  #FFD500;
+    --orange: #FF971C;
+    --red: #FF3213;
+    --white: #FEFEFE;
+    --purple: #D129FF;
+    --grid: black;
+    --background: white; 
+}
+
+body {
+     background-color: grey;
+}

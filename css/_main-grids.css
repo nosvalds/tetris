@@ -1,7 +1,7 @@
 .grid {
     width: 200px;
     height: 400px;
-    background-color: grey;
+    background-color: var(--grid);
     display: flex;
     flex-wrap: wrap;
 }
@@ -9,7 +9,7 @@
 .display-grid {
     width: 100px;
     height: 600px;
-    background-color: grey;
+    background-color: var(--grid);
     display: flex;
     flex-wrap: wrap;
 }
@@ -17,6 +17,7 @@
 .grid div, .display-grid div, .mini-grid div  {
     height: 20px;
     width: 20px;
+    /* border: 0.25px solid var(--white) */
 }
 
 .mini-grid {
@@ -24,5 +25,5 @@
     height: 80px;
     display: flex;
     flex-wrap: wrap;
-    background-color: grey;
+    background-color: var(--grid);
 }

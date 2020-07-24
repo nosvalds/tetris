@@ -1,0 +1,3 @@
+.tetromino {
+    border: 1px solid var(--grid);
+}
