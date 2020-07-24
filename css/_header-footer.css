@@ -1,13 +1,23 @@
+header h1 {
+    margin: 0.5rem auto;
+}
+
 footer { 
     display: flex;
     flex-direction: row-reverse;
     text-align: right;
-    background-color: var(--grid);
     align-items: center;
 }
 
 footer a, footer p {
     text-decoration: none;
-    color: var(--white);
     padding: 0 1rem;
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+}
+
+.score-controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }

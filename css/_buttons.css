@@ -1,6 +1,12 @@
 .main-button {
-    padding: 1rem;
-    border-radius: 15px;
-    margin-bottom: 1rem;
+    font-size: 1rem;
+    color: var(--background);
+    background-color: var(--blue);
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
     border: none;
+}
+
+.main-button:hover {
+    background-color: var(--grid);
 }

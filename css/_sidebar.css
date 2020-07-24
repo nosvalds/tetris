@@ -1,9 +1,11 @@
 .left-main-sidebar {
-    background-color: var(--grid);
     display: flex;
-    flex-wrap: wrap;
+    justify-content: center;
 }
 
 .sidebar {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
     margin-left: 50px;
 }

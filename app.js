@@ -202,19 +202,19 @@
             })
         }
 
-        const sideWidth = 5;
+        const sideWidth = 30;
 
         const colorDispTetrominoes = [
             [1, sideWidth + 1, sideWidth * 2 + 1, 2],
             [1, sideWidth + 1, sideWidth * 2 + 1, sideWidth * 2 + 2],
-            [1, 2, sideWidth, sideWidth + 1],
+            [sideWidth + 1, sideWidth + 2, sideWidth * 2, sideWidth * 2 + 1],
             [0, 1, sideWidth + 1, sideWidth + 2],
-            [1, sideWidth, sideWidth + 1, sideWidth + 2],
+            [sideWidth + 1, sideWidth * 2, sideWidth * 2 + 1, sideWidth * 2 + 2],
             [0, 1, sideWidth, sideWidth + 1],
-            [1, sideWidth + 1, sideWidth * 2 + 1, sideWidth * 3 + 1]
+            [0, sideWidth, sideWidth * 2, sideWidth * 3]
         ];
 
-        let displayPosition = 1 + sideWidth;
+        let displayPosition = 2;
 
         // draw display grid tetrominos
         let drawDisplay = () => {
@@ -223,7 +223,7 @@
                     colordisplaySquares[displayPosition + index].classList.add('tetromino');
                     colordisplaySquares[displayPosition + index].style.backgroundColor = colors[i];
                 });
-                displayPosition += width * 2 ; // move down the grid
+                displayPosition += 4; // move down the grid
             }
         }
 

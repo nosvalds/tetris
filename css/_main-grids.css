@@ -1,29 +1,36 @@
 .grid {
-    width: 200px;
-    height: 400px;
+    width: 250px;
+    height: 500px;
     background-color: var(--grid);
     display: flex;
     flex-wrap: wrap;
 }
 
 .display-grid {
-    width: 100px;
-    height: 600px;
+    width: 600px;
+    height: 90px;
     background-color: var(--grid);
+    border-top: 5px solid var(--grid);
+    border-bottom: 5px solid var(--grid);
     display: flex;
     flex-wrap: wrap;
 }
 
-.grid div, .display-grid div, .mini-grid div  {
+.display-grid div {
     height: 20px;
     width: 20px;
-    /* border: 0.25px solid var(--white) */
+}
+
+.grid div, .mini-grid div  {
+    height: 25px;
+    width: 25px;
 }
 
 .mini-grid {
-    width: 80px;
-    height: 80px;
+    width: 100px;
+    height: 100px;
     display: flex;
     flex-wrap: wrap;
     background-color: var(--grid);
+    margin-bottom: 2rem;
 }

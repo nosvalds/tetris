@@ -1,5 +1,5 @@
 /* fonts */
-@import url('https://fonts.googleapis.com/css2?family=Montserrat&family=Notable&display=swap');
+/* @import url('https://fonts.googleapis.com/css2?family=Montserrat&family=Notable&display=swap'); */
 /* border-box for everything */
 * {
     box-sizing: border-box;
@@ -22,5 +22,5 @@
 }
 
 body {
-     background-color: grey;
+     background-color: var(--background);
 }
