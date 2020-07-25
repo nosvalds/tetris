@@ -9,6 +9,8 @@
         let nextRandom = 0;
         let timerId
         let score = 0;
+        const initialSpeed = 1000;
+        const dropSpeed = 10;
         const colors = [
             '#0341AE',
             '#FF971C',
@@ -105,6 +107,12 @@
             freeze();
         }
 
+        // make the tetrominos drop all the way down the page
+        let dropDown = () => {
+            clearInterval(timerId);
+            timerId = setInterval(moveDown, dropSpeed);
+        }
+
         // calls this function every 1000ms = 1sec
         //timerId = setInterval(moveDown, 500);
 
@@ -118,7 +126,9 @@
                 moveRight();
             } else if (e.keyCode === 40) { // down arrow
                 moveDown();
-            }
+            } else if (e.keyCode === 32) { // spacebar
+                dropDown();
+            } 
         }
 
         d.addEventListener('keyup', control); // event listener for key-up
@@ -129,6 +139,8 @@
             if (current.some(index => squares[currentPosition + index + width].classList.contains('taken'))) {
                 // mark div's of the tetromino as taken
                 current.forEach(index => squares[currentPosition + index].classList.add('taken'));
+                clearInterval(timerId);
+                timerId = setInterval(moveDown, initialSpeed); // reset timer in case it's been dropped w/ spacebar
                 //start a new tetronimo falling
                 random = nextRandom;
                 nextRandom = Math.floor(Math.random() * theTetrominoes.length);
@@ -236,7 +248,8 @@
                 timerId = null;
             } else {
                 draw();
-                timerId = setInterval(moveDown, 1000);
+                timerId = setInterval(moveDown, initialSpeed);
+                console.log(timerId);
                 nextRandom = Math.floor(Math.random() * theTetrominoes.length);
                 displayShape();
             }
