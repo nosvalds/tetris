@@ -1,5 +1,34 @@
 ((d, w) => {
     d.addEventListener('DOMContentLoaded', () =>{
+        // build out the grids
+
+        // takes a count of div's and classnames, returns a document fragment with that many divs
+        const createDivs = (count, className) => {
+            let fragment = document.createDocumentFragment();
+            for (let i = 0; i < count; i += 1) {
+               let div = d.createElement("div")
+               className !== "" ? div.classList.add(className) : null;
+               fragment.append(div);
+            }
+            return fragment;
+        }
+        
+        const createMarkup = () => {
+            // main gameplay grid 200 empty divs, 10 "taken" divs for the bottom
+            const grid = d.querySelector('.grid');
+            grid.append(createDivs(200, ""));
+            grid.append(createDivs(10, "taken"));
+
+            // top display grid of 120 divs
+            d.querySelector('.display-grid').append(createDivs(120, ""));
+
+            // mini grid for next up tetromino
+            d.querySelector('.mini-grid').append(createDivs(16,""));
+        }
+        
+        createMarkup();
+
+        // Game functionality
         const grid = d.querySelector('.grid');
         let squares = Array.from(d.querySelectorAll('.grid div'));
         let colordisplaySquares = Array.from(d.querySelectorAll('.display-grid div'));
