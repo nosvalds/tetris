@@ -33,13 +33,15 @@
         let squares = Array.from(d.querySelectorAll('.grid div'));
         let colordisplaySquares = Array.from(d.querySelectorAll('.display-grid div'));
         const scoreDisplay = d.getElementById("score");
+        const speedDisplay = d.getElementById("speed");
         const startBtn = d.getElementById("start-btn");
         const width = 10;
         let nextRandom = 0;
         let timerId
         let score = 0;
-        const initialSpeed = 1000;
-        const dropSpeed = 10;
+        let gameSpeed = 1000;
+        let levelIncrementSpeed = 100;
+        const quickDropSpeed = 10;
         const colors = [
             '#0341AE',
             '#FF971C',
@@ -139,7 +141,7 @@
         // make the tetrominos drop all the way down the page
         let dropDown = () => {
             clearInterval(timerId);
-            timerId = setInterval(moveDown, dropSpeed);
+            timerId = setInterval(moveDown, quickDropSpeed);
         }
 
         // calls this function every 1000ms = 1sec
@@ -169,7 +171,7 @@
                 // mark div's of the tetromino as taken
                 current.forEach(index => squares[currentPosition + index].classList.add('taken'));
                 clearInterval(timerId);
-                timerId = setInterval(moveDown, initialSpeed); // reset timer in case it's been dropped w/ spacebar
+                timerId = setInterval(moveDown, gameSpeed); // reset timer in case it's been dropped w/ spacebar
                 //start a new tetronimo falling
                 random = nextRandom;
                 nextRandom = Math.floor(Math.random() * theTetrominoes.length);
@@ -277,7 +279,7 @@
                 timerId = null;
             } else {
                 draw();
-                timerId = setInterval(moveDown, initialSpeed);
+                timerId = setInterval(moveDown, gameSpeed);
                 console.log(timerId);
                 nextRandom = Math.floor(Math.random() * theTetrominoes.length);
                 displayShape();
@@ -300,6 +302,16 @@
                     const squaresRemoved = squares.splice(i, width);
                     squares = squaresRemoved.concat(squares);
                     squares.forEach(cell => grid.appendChild(cell));
+
+                    // speed up after every score pts
+                    clearInterval(timerId);
+                    levelIncrementSpeed = gameSpeed === 500 ? 50 : levelIncrementSpeed;
+                    levelIncrementSpeed = gameSpeed === 100 ? 10 : levelIncrementSpeed;
+                    gameSpeed -= levelIncrementSpeed;
+                    gameSpeed = gameSpeed < 10 ? 5 : gameSpeed;
+                    timerId = setInterval(moveDown, gameSpeed);
+                    // display updated speed
+                    speedDisplay.textContent = (1000 / gameSpeed);
                 }
             }
         }

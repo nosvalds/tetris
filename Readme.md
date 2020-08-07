@@ -9,5 +9,6 @@ https://www.youtube.com/watch?time_continue=5&v=rAUn1Lom6dw&feature=emb_logo
 - [x] Do the styling!
 - [x] Make spacebar drop tetromino faster (need to make it slow down again once it hits bottom)
 - [x] Render all the grid divs with JavaScript
-- [ ] Speed up the game when reaching certain points/add levels
+- [x] Speed up the game when scoring points
+  - [ ] tune speed changes and add levels 
 - [ ] Reset Button
